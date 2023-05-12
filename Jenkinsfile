@@ -26,7 +26,7 @@ pipeline {
                     def containerName = "my-app-test-${UUID.randomUUID().toString()}"
 
                     // Run the container with the tests
-                    sh "docker run --name ${containerName} my-app:${commitHash} npm test"
+                    sh "docker run --name ${containerName} my-app:${commitHash} npm start"
 
                     // Remove the container after the tests are completed
                     sh "docker rm ${containerName}"
