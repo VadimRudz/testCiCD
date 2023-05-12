@@ -14,20 +14,20 @@ pipeline {
                     try {
                         dockerImage.inside() {
                             // Extracting the PROJECTDIR environment variable from inside the container
-                            def PROJECTDIR = sh(script: 'echo \$PROJECTDIR', returnStdout: true).trim()
+                            def PROJECTDIR = bat(script: 'echo \$PROJECTDIR', returnStdout: true).trim()
 
                             // Copying the project into our workspace
-                            sh "cp -r '$PROJECTDIR' '$WORKSPACE'"
+                            bat "cp -r '$PROJECTDIR' '$WORKSPACE'"
 
                             // Running the tests inside the new directory
                             dir("$WORKSPACE$PROJECTDIR") {
-                                sh "npm start"
+                                bat "npm start"
                             }
                         }
 
                     } finally {
                         // Removing the docker image
-                        sh "docker rmi $registry:$BUILD_NUMBER"
+                        bat "docker rmi $registry:$BUILD_NUMBER"
                     }
                 }
             }
