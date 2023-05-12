@@ -1,14 +1,14 @@
 FROM node:latest
 
-RUN mkdir -p /tests/app
+ENV PROJECTDIR /nodeApp
 
-WORKDIR /tests/app
+WORKDIR $PROJECTDIR
 
-COPY package.json /tests/app/
+COPY package*.json ./
 
 RUN npm install
 
-COPY . /tests/app/
+COPY . .
 
 EXPOSE 3000
 
