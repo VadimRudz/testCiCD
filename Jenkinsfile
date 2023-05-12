@@ -1,7 +1,7 @@
 pipeline {
     environment {
         // This registry is important for removing the image after the tests
-        registry = "rudz/jenkins-docker"
+        registry = "v.rudz/nodeApp"
     }
     agent any
     stages {
