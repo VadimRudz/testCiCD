@@ -1,0 +1,11 @@
+version: '1'
+
+services:
+  server:
+    image: thomaspoignant/hello-world-rest-json
+    ports:
+        - 8080:8080
+  tests:
+    build: .
+    ports:
+        - 8081:8081
