@@ -35,16 +35,5 @@ pipeline {
                 }
             }
         }
-        post {
-        always {
-            echo 'This will always run, regardless of the build result.'
-        }
-        success {
-            echo 'This will run only if the build is successful.'
-        }
-        failure {
-            echo 'This will run only if the build failed.'
-        }
-    }
     }
 }
