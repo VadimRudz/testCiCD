@@ -21,7 +21,7 @@ pipeline {
 
                             // Running the tests inside the new directory
                             dir("$WORKSPACE$PROJECTDIR") {
-                                sh "npm test"
+                                sh "npm start"
                             }
                         }
 
