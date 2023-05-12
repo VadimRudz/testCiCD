@@ -3,10 +3,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "mocha -g @run"
+    "start": "mocha -g @run || npm run report",
+    "report": "mocha test --reporter mocha-junit-reporter"
   },
   "dependencies": {
     "chai": "^4.3.7",
     "mocha": "^10.2.0"
+  },
+  "devDependencies": {
+    "mocha-junit-reporter": "^2.2.0"
   }
 }
