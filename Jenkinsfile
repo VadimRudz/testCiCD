@@ -1,7 +1,7 @@
 pipeline {
     environment {
         // This registry is important for removing the image after the tests
-        registry = "v.rudz/nodeapp"
+        registry = "nodeApp"
     }
     agent any
     stages {
