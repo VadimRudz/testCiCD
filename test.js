@@ -7,7 +7,7 @@ describe('Tests', function () {
         assert.equal(someNumber, 11);
       });
       it('Should be failed @run', function () {
-        let someNumber = 11;
+        let someNumber = 22;
         assert.equal(someNumber, 22);
       });
     });
